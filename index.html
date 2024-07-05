@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Alexandria</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar With Bootstrap Buttons and Sections -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Navbar Emblem/Logo Link -->
+            <a class="navbar-brand" href="#">Welcome</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#book-search">Book Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Page With Headlines, About, and Mission Statement -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>The History Of The World At Your Fingertips...</h1>
+                    <p>"Unlock the treasure trove of literary history at New Alexandria, the premier digital repository of archived texts from across the ages. With a vast collection of timeless classics, rare manuscripts, and obscure gems, our mission is to make the world's most significant works of literature accessible to all. From ancient epics to modern masterpieces, our digital shelves stretch back centuries, offering readers a chance to rediscover forgotten favorites and uncover new treasures. Browse our meticulously curated archives today and embark on a journey through the rich tapestry of human storytelling."</p>
+                    <a href="#" class="btn btn-primary">Support our cause!</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.FAh0a1lqJ_vEbX-XvRtYwQHaHa%26pid%3DApi&f=1&ipt=d003cb03446ac5128094f814c3b1d130981c777ec2740ccca586ae66c11935d8&ipo=images" alt="Hero Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.craiyon.com%2F2023-11-17%2FKGfD-vjYSUKoRfBrziZwvA.webp&f=1&nofb=1&ipt=bce4ee9cead1eec64240151ce45d48b095f907aefee6bdbf3c0b7e7bdc8e09c7&ipo=images" alt="About Image" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h2>About New Alexandria</h2>
+                    <p> Welcome to New Alexandria, a digital library dedicated to the preservation and accessibility of human literature. Our mission is to create a vast, comprehensive archive of every written work of literature ever created, making it possible for readers to access and discover new classics, rare gems, and obscure treasures from around the world.
+                        
+                        Founded on the principles of democratic access and cultural preservation, New Alexandria is a non-profit organization driven by a passion for literature and a commitment to making knowledge accessible to all. Our digital library is designed to be a living, breathing entity, constantly evolving to reflect the ever-changing landscape of human creativity.
+                        
+                        With a global network of contributors, partners, and collaborators, we are working tirelessly to digitize and preserve every written work of literature, from ancient scrolls to modern e-books. Our archives span multiple languages, genres, and formats, including poetry, novels, plays, essays, and more.
+                        
+                        At New Alexandria, we believe that literature has the power to unite us across cultures, borders, and time. It has the ability to inspire, educate, and transform individuals and societies. By providing free and open access to our vast collection of literary works, we aim to:
+                        
+                        Preserve cultural heritage for future generations
+                        Foster a deeper understanding of human culture and history
+                        Promote literacy and a love of reading
+                        Support education and research
+                        Celebrate the diversity of human creativity
+                        Our digital library is designed to be user-friendly, intuitive, and accessible on any device. Browse our collection by author, title, genre, or era; explore curated collections and exhibitions; or search for specific keywords or themes. With New Alexandria, you can:
+                        
+                        Read classic works in their original languages or translated versions
+                        Discover new authors and genres
+                        Research historical contexts and literary movements
+                        Engage with online communities and discussions
+                        Download e-books for offline reading
+                        Join us on this exciting journey as we strive to create the most comprehensive digital library of human literature. Together, let us celebrate the power of words and ideas that have shaped our world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Search Section -->
+    <section id="book-search" class="book-search-section">
+        <div class="container">
+            <h2>Book Search</h2>
+            <form id="book-search-form">
+                <div class="mb-3">
+                    <label for="book-title" class="form-label">Book Title</label>
+                    <input type="text" class="form-control" id="book-title" placeholder="Enter book title">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="searchBook()">Search</button>
+            </form>
+            <div id="search-results" class="mt-3"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section With Copyright Info and Contact Info -->
+    <footer class="footer">
+        <div class="container">
+            <p>New Alexandria&copy;  910-NEW-ALEX  NewAlexandria@Archive.org</p>
+            <p></p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript files -->
+    <script src="app.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

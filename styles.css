@@ -1,0 +1,97 @@
+/* Custom styles for New Alexandria project */
+
+/* Import Times New Roman font */
+@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+
+/* Bootstrap Overrides */
+:root {
+    --primary-color: #D2B48C; /* Classical papyrus color */
+    --secondary-color: #8B4513; /* Dark brown */
+    --light-color: #F5F5F5; /* Light gray */
+    --dark-color: #333; /* Dark gray */
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.container {
+    max-width: 960px; /* Adjust container width as needed */
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: var(--dark-color) !important;
+}
+
+.navbar-brand:hover, .navbar-nav .nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 4rem 0;
+    background-color: var(--light-color);
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: var(--dark-color);
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 0;
+}
+
+.about-section h2 {
+    color: var(--dark-color);
+}
+
+/* Book Search Section */
+.book-search-section {
+    padding: 4rem 0;
+}
+
+.book-search-section h2 {
+    color: var(--dark-color);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 0;
+}
+
+.contact-section h2 {
+    color: var(--dark-color);
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+}
+
+/* Adjust button colors and hover effects */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: #654321; /* Darker brown on hover */
+    border-color: #654321;
+    color: var(--light-color);
+}
+
+/* Additional styles can be added as needed */
+
