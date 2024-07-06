@@ -8,7 +8,7 @@ function searchBook() {
         return;
     }
 
-    fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(title)}`)
+    fetch(`http://localHost:3001/${encodeURIComponent(title)}`)
         .then(response => response.json())
         .then(data => {
             const books = data.docs;
@@ -24,7 +24,7 @@ function searchBook() {
                     resultsContainer.appendChild(bookElement);
                 });
             } else {
-                resultsContainer.innerHTML = '<p>Oops, it looks like the text you are looking for is unavailable. If you would like to submit a text, please redirect to our contact page, and we would be happy to assist you.</p>';
+                resultsContainer.innerHTML = '<p>Oops it looks like the text you are looking for is unavailable. If you would like to submit a text please redirect to our contact page and we would be happy to assist</p>';
             }
         })
         .catch(error => {
