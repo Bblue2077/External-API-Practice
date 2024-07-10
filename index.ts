@@ -1,6 +1,24 @@
+interface Book {
+    title: string;
+    author_name: string[];
+    first_publish_year: number | null;
+    // Add other properties as needed
+}
+
 function searchBook() {
-    const title = document.getElementById('book-title').value.trim();
+    const titleInput = document.getElementById('book-title') as HTMLInputElement;
+    if (!titleInput) {
+        console.error('Error: Book title input element not found');
+        return;
+    }
+
+    const title = titleInput.value.trim();
     const resultsContainer = document.getElementById('search-results');
+    if (!resultsContainer) {
+        console.error('Error: Search results container element not found');
+        return;
+    }
+
     resultsContainer.innerHTML = '';
 
     if (title === '') {
@@ -8,9 +26,14 @@ function searchBook() {
         return;
     }
 
-    fetch(`http://localHost:3001/${encodeURIComponent(title)}`)
-        .then(response => response.json())
-        .then(data => {
+    fetch(`http://localhost:3001/${encodeURIComponent(title)}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data: { docs: Book[] }) => {
             const books = data.docs;
             if (books.length > 0) {
                 books.forEach(book => {
@@ -24,11 +47,12 @@ function searchBook() {
                     resultsContainer.appendChild(bookElement);
                 });
             } else {
-                resultsContainer.innerHTML = '<p>Oops it looks like the text you are looking for is unavailable. If you would like to submit a text please redirect to our contact page and we would be happy to assist</p>';
+                resultsContainer.innerHTML = '<p>No books found.</p>';
             }
         })
         .catch(error => {
-            resultsContainer.innerHTML = '<p>An error occurred while searching for books.</p>';
+            resultsContainer.innerHTML = `<p>An error occurred while searching for books: ${error.message}</p>`;
             console.error('Error fetching book data:', error);
         });
 }
+

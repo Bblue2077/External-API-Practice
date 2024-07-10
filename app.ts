@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
+import express from 'express';
+import cors from 'cors';
+import axios from 'axios';
 const app = express();
 
 // CORS options
@@ -28,6 +28,7 @@ app.get('/:title', async (req, res) => {
         res.status(500).json({ message: 'Error fetching data' });
     }
 });
+
 // Configure the server to listen on port 3000
 const PORT = 3001;
 app.listen(PORT, () => {
